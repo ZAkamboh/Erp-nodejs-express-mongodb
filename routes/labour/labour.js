@@ -5,7 +5,7 @@ const labourdi = require("../../models/labourdi");
 const bank = require("../../models/bank");
 const showrooms = require("../../models/showrooms");
 const add = require("../../models/add");
-//const { adminAuthenticated } = require("../../helpers/authentication");
+const { adminAuthenticated } = require("../../helpers/authentication");
 
 router.all("/*", (req, res, next) => {
   req.app.locals.layout = "home";
@@ -70,7 +70,7 @@ router.put("/edit/:id", (req, res) => {
   // res.send("working");
 });
 
-router.get("/home", (req, res) => {
+router.get("/home", adminAuthenticated, (req, res) => {
   //res.render("home/index.handlebars", { user: req.user });
   //res.send("working");
 
@@ -105,7 +105,7 @@ router.delete("/deletethekedar/:id", adminAuthenticated, (req, res) => {
   });
 });
 
-router.get("/record", (req, res) => {
+router.get("/record", adminAuthenticated, (req, res) => {
   //res.render("home/labour/shafiqrec.handlebars");
   //res.send("working");
   //res.render("home/labour/record.handlebars");
@@ -128,7 +128,7 @@ router.get("/record", (req, res) => {
     });
 });
 
-router.get("/create", (req, res) => {
+router.get("/create", adminAuthenticated, (req, res) => {
   add
     .find({})
     .then(po => {
@@ -138,7 +138,7 @@ router.get("/create", (req, res) => {
       if (err) return err;
     });
 });
-router.get("/add", (req, res) => {
+router.get("/add", adminAuthenticated, (req, res) => {
   add
     .find({})
     .then(addlabb => {
@@ -149,7 +149,7 @@ router.get("/add", (req, res) => {
     });
 });
 
-router.post("/add", (req, res) => {
+router.post("/add", adminAuthenticated, (req, res) => {
   const newadd = new add({
     ch: req.body.ch
   });
@@ -158,7 +158,7 @@ router.post("/add", (req, res) => {
   });
 });
 
-router.get("/create", (req, res) => {
+router.get("/create", adminAuthenticated, (req, res) => {
   res.render("home/labour/create.handlebars");
   //res.send("working");
 });

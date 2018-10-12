@@ -71,7 +71,7 @@ app.use("/", labourdi);
 app.use("/", showrooms);
 app.use("/", bank);
 
-const port = 4200;
+const port = process.env.PORT || 4500;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });

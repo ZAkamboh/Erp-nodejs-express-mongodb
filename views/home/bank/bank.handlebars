@@ -1,0 +1,536 @@
+ {{#if delete_message}}
+<div class='alert alert-success'> {{delete_message}}</div>
+{{/if}}
+
+<hr style="background-color: red">
+<a href="/bankrec" class="btn btn-info">See Record </a>
+<hr style="background-color: red">
+<form action="/bank" method="post">
+    <select name="name" value="select labour">
+
+        <option value="madina">Al-Madina</option>
+        <option value="personal">Personal</option>
+        <option value="kharcha">Kharcha</option>
+
+
+
+    </select>
+
+
+
+    <table class="table table-bordered">
+        <thead>
+
+            <tr>
+
+                <td style="background-color:blue;color:white">
+                    Date
+                </td>
+
+
+                <td style="background-color:blue;color:white">
+                    BODY
+                </td>
+
+
+
+
+                <td style="background-color:green ;color:white">Credit</td>
+                <td style="background-color:red ;color:white">Debit</td>
+                <td style="background-color:green ;color:white"> previous</td>
+
+
+
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <input type="text" name="date1" class="form-control">
+                </td>
+                <td>
+                    <textarea name="a" value='null' class="form-control"></textarea>
+                </td>
+                <td style="color:green">
+                    <input type="text" name="b" value="mm" class="form-control" style="color:green">
+                </td>
+
+                <td style="color:red">
+                    <input type="text" name="c" value="mm" class="form-control" onblur="final(this.value)" style="color:red">
+                </td>
+
+                <td style="background-color:green;color:white">
+                    <input type="text" name="d" class="form-control" id="pre" style="color:green">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date2" class="form-control">
+                </td>
+                <td>
+                    <textarea name="e" class="form-control"></textarea>
+                </td>
+
+
+                <td>
+                    <input type="text" name="f" onblur="finalpl2(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="g" onblur="final2(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="h" id="pre2" class="form-control" value="0">
+                </td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date3" class="form-control">
+                </td>
+                <td>
+                    <textarea name="i" value='null' class="form-control"></textarea>
+                </td>
+
+
+
+
+                <td>
+                    <input type="text" name="j" onblur="finalpl3(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="k" onblur="final3(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="l" id="pre3" class="form-control" value="0">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="date4" class="form-control">
+                </td>
+                <td>
+                    <textarea name="m" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="n" onblur="finalpl4(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="o" onblur="final4(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="p" id="pre4" class="form-control" value="0">
+                </td>
+
+
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date5" class="form-control">
+                </td>
+                <td>
+                    <textarea name="q" value='null' class="form-control"></textarea>
+                </td>
+
+
+
+
+                <td>
+                    <input type="text" name="r" onblur="finalpl5(this.value)" class="form-control" value="0">
+                </td>
+
+                <td>
+                    <input type="text" name="s" onblur="final5(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="t" id="pre5" class="form-control" value="0">
+                </td>
+
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date6" class="form-control">
+                </td>
+                <td>
+                    <textarea name="u" value='null' class="form-control"></textarea>
+                </td>
+
+
+                <td>
+                    <input type="text" name="v" onblur="finalpl6(this.value)" class="form-control" value="0">
+                </td>
+
+                <td>
+                    <input type="text" name="w" onblur="final6(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="x" id="pre6" class="form-control" value="0">
+                </td>
+
+
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    <input type="text" name="date7" class="form-control">
+                </td>
+                <td>
+                    <textarea name="y" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="z" onblur="finalpl7(this.value)" class="form-control" value="0">
+                </td>
+
+                <td>
+                    <input type="text" name="aa" onblur="final7(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="bb" id="pre7" class="form-control" value="0">
+                </td>
+
+
+
+
+                <td>
+                    <button class="btn btn-info">Submit</button>
+                </td>
+
+            </tr>
+        </thead>
+
+
+    </table>
+</form>
+
+<script>
+
+
+
+    // +
+
+
+    // grand total - previous
+
+
+
+
+    //second row work
+
+    let khar2 = 0, pre2 = 0;
+
+    let minusf2 = (totalsl2, khar2) => {
+        return totalsl2 - khar2
+    }
+
+    let setPrevious2 = (previousz2) => {
+        document.querySelector("#pre2").value = previousz2;
+    }
+
+    let final2 = (v2) => {
+        khar2 = v2;
+        const totalsl2 =
+            document.querySelector("#pre").value;
+        const previousz2 = minusf2(totalsl2, khar2);
+        setPrevious2(previousz2);
+    }
+
+    let kharpl2 = 0, prepl2 = 0;
+
+    let minusfpl2 = (totalslpl2, kharpl2) => {
+        return +totalslpl2 + + kharpl2
+    }
+
+    let setPreviouspl2 = (previouszpl2) => {
+        document.querySelector("#pre2").value = previouszpl2;
+    }
+
+    let finalpl2 = (vpl2) => {
+        kharpl2 = vpl2;
+        const totalslpl2 =
+            document.querySelector("#pre").value;
+        const previouszpl2 = minusfpl2(totalslpl2, kharpl2);
+        setPreviouspl2(previouszpl2);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // 3rd row work
+
+    let khar3 = 0, pre3 = 0;
+
+    let minusf3 = (totalsl3, khar3) => {
+        return totalsl3 - khar3
+    }
+
+    let setPrevious3 = (previousz3) => {
+        document.querySelector("#pre3").value = previousz3;
+    }
+
+    let final3 = (v3) => {
+        khar3 = v3;
+        const totalsl3 =
+            document.querySelector("#pre2").value;
+        const previousz3 = minusf3(totalsl3, khar3);
+        setPrevious3(previousz3);
+    }
+
+    let kharpl3 = 0, prepl3 = 0;
+
+    let minusfpl3 = (totalslpl3, kharpl3) => {
+        return +totalslpl3 + + kharpl3
+    }
+
+    let setPreviouspl3 = (previouszpl3) => {
+        document.querySelector("#pre3").value = previouszpl3;
+    }
+
+    let finalpl3 = (vpl3) => {
+        kharpl3 = vpl3;
+        const totalslpl3 =
+            document.querySelector("#pre2").value;
+        const previouszpl3 = minusfpl3(totalslpl3, kharpl3);
+        setPreviouspl3(previouszpl3);
+    }
+
+
+
+
+
+
+
+    //4th row work
+
+
+    let khar4 = 0, pre4 = 0;
+
+    let minusf4 = (totalsl4, khar4) => {
+        return totalsl4 - khar4
+    }
+
+    let setPrevious4 = (previousz4) => {
+        document.querySelector("#pre4").value = previousz4;
+    }
+
+    let final4 = (v4) => {
+        khar4 = v4;
+        const totalsl4 =
+            document.querySelector("#pre3").value;
+        const previousz4 = minusf4(totalsl4, khar4);
+        setPrevious4(previousz4);
+    }
+
+
+    let kharpl4 = 0, prepl4 = 0;
+
+    let minusfpl4 = (totalslpl4, kharpl4) => {
+        return +totalslpl4 + + kharpl4
+    }
+
+    let setPreviouspl4 = (previouszpl4) => {
+        document.querySelector("#pre4").value = previouszpl4;
+    }
+
+    let finalpl4 = (vpl4) => {
+        kharpl4 = vpl4;
+        const totalslpl4 =
+            document.querySelector("#pre3").value;
+        const previouszpl4 = minusfpl4(totalslpl4, kharpl4);
+        setPreviouspl4(previouszpl4);
+    }
+
+
+
+
+
+
+
+    //5th row work
+
+
+
+
+
+    let khar5 = 0, pre5 = 0;
+
+    let minusf5 = (totalsl5, khar5) => {
+        return totalsl5 - khar5
+    }
+
+    let setPrevious5 = (previousz5) => {
+        document.querySelector("#pre5").value = previousz5;
+    }
+
+    let final5 = (v5) => {
+        khar5 = v5;
+        const totalsl5 =
+            document.querySelector("#pre4").value;
+        const previousz5 = minusf5(totalsl5, khar5);
+        setPrevious5(previousz5);
+    }
+
+    let kharpl5 = 0, prepl5 = 0;
+
+    let minusfpl5 = (totalslpl5, kharpl5) => {
+        return +totalslpl5 + + kharpl5
+    }
+
+    let setPreviouspl5 = (previouszpl5) => {
+        document.querySelector("#pre5").value = previouszpl5;
+    }
+
+    let finalpl5 = (vpl5) => {
+        kharpl5 = vpl5;
+        const totalslpl5 =
+            document.querySelector("#pre4").value;
+        const previouszpl5 = minusfpl5(totalslpl5, kharpl5);
+        setPreviouspl5(previouszpl5);
+    }
+
+
+
+
+
+
+    // 6th row work
+
+
+    let khar6 = 0, pre6 = 0;
+
+    let minusf6 = (totalsl6, khar6) => {
+        return totalsl6 - khar6
+    }
+
+    let setPrevious6 = (previousz6) => {
+        document.querySelector("#pre6").value = previousz6;
+    }
+
+    let final6 = (v6) => {
+        khar6 = v6;
+        const totalsl6 =
+            document.querySelector("#pre5").value;
+        const previousz6 = minusf6(totalsl6, khar6);
+        setPrevious6(previousz6);
+    }
+
+
+    let kharpl6 = 0, prepl6 = 0;
+
+    let minusfpl6 = (totalslpl6, kharpl6) => {
+        return +totalslpl6 + + kharpl6
+    }
+
+    let setPreviouspl6 = (previouszpl6) => {
+        document.querySelector("#pre6").value = previouszpl6;
+    }
+
+    let finalpl6 = (vpl6) => {
+        kharpl6 = vpl6;
+        const totalslpl6 =
+            document.querySelector("#pre5").value;
+        const previouszpl6 = minusfpl6(totalslpl6, kharpl6);
+        setPreviouspl6(previouszpl6);
+    }
+
+
+
+
+
+
+
+
+
+
+    // 7th row work
+
+
+    let khar7 = 0, pre7 = 0;
+
+    let minusf7 = (totalsl7, khar7) => {
+        return totalsl7 - khar7
+    }
+
+    let setPrevious7 = (previousz7) => {
+        document.querySelector("#pre7").value = previousz7;
+    }
+
+    let final7 = (v7) => {
+        khar7 = v7;
+        const totalsl7 =
+            document.querySelector("#pre6").value;
+        const previousz7 = minusf7(totalsl7, khar7);
+        setPrevious7(previousz7);
+    }
+
+
+    let kharpl7 = 0, prepl7 = 0;
+
+    let minusfpl7 = (totalslpl7, kharpl7) => {
+        return +totalslpl7 + + kharpl7
+    }
+
+    let setPreviouspl7 = (previouszpl7) => {
+        document.querySelector("#pre7").value = previouszpl7;
+    }
+
+    let finalpl7 = (vpl7) => {
+        kharpl7 = vpl7;
+        const totalslpl7 =
+            document.querySelector("#pre6").value;
+        const previouszpl7 = minusfpl7(totalslpl7, kharpl7);
+        setPreviouspl7(previouszpl7);
+    }
+
+
+
+
+
+
+
+
+
+</script>

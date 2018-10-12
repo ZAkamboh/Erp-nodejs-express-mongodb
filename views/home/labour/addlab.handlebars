@@ -1,0 +1,19 @@
+<form action="/add" method="post">
+    <input type="text" name="ch">
+    <button type="submit">add</button>
+</form>
+
+<table>
+    {{#each addlabb}}
+    <tr>
+        <td>
+            {{ch}}
+        </td>
+        <td>
+            <form action="/deletethekedar/{{id}}?_method=delete" method="post">
+                <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+        </td>
+    </tr>
+    {{/each}}
+</table>

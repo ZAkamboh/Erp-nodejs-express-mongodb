@@ -1,0 +1,19 @@
+<form action="/dihadi" method="post">
+    <input type="text" name="dihadi">
+    <button type="submit">add</button>
+</form>
+
+<table>
+    {{#each owais}}
+    <tr>
+        <td>
+            {{dihadi}}
+        </td>
+        <td>
+            <form action="/deletedihadi/{{id}}?_method=delete" method="post">
+                <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+        </td>
+    </tr>
+    {{/each}}
+</table>

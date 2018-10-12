@@ -1,0 +1,846 @@
+ {{#if delete_message}}
+<div class='alert alert-success'> {{delete_message}}</div>
+{{/if}}
+
+<hr style="background-color: red">
+<a href="/roomrec" class="btn btn-info">See Record </a>
+<hr style="background-color: red">
+<form action="/rooms" method="post" enctype="multipart/form-data">
+    <select name="name" value="select labour">
+        <option>select any option</option>
+        {{#each rom}}
+        <option value="{{chc}}">{{chc}}</option>{{/each}}
+
+
+
+    </select>
+
+
+
+    <table class="table table-bordered">
+        <thead>
+
+            <tr>
+
+                <td style="background-color:blue;color:white">
+                    Date
+                </td>
+
+
+                <td style="background-color:blue;color:white">
+                    BODY
+                </td>
+
+                <td style="background-color:blue;color:white">
+                    QUANTITY
+                </td>
+                <td style="background-color:rgb(0, 124, 128) ;color:white">
+                    RATE
+                </td>
+                <td style="background-color:rgb(0, 255, 128) ;color:white"> RATE TOTAL</td>
+
+
+                <td style="background-color:red ;color:white">advance</td>
+                <td style="background-color:green ;color:white"> previous</td>
+                <td style="background-color:green ;color:white"> balance</td>
+
+
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <input type="text" name="date1" class="form-control">
+                </td>
+                <td>
+                    <textarea name="a" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="b" id="taf77" class="form-control" value="0" onblur="quanOne(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="c" id="quan11" class="form-control" value="0" onblur="rateOne(this.value)">
+                </td>
+
+
+
+                <td>
+                    <input type="text" name="d" id="total11" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+
+
+
+
+
+                <td style="color:red">
+                    <input type="text" name="e" value="mm" class="form-control" onblur="final(this.value)" style="color:red">
+                </td>
+
+                <td style="background-color:green;color:white">
+                    <input type="text" name="f" class="form-control" id="pre" style="color:green">
+                </td>
+                <td style="background-color:green ;color:white"> ladjer</td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="date2" class="form-control">
+                </td>
+                <td>
+                    <textarea name="g" value='null' class="form-control"></textarea>
+                </td>
+                <td>
+                    <input type="text" name="h" id="taf11" class="form-control" value="0" onblur="quanTwo(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="i" id="quan22" class="form-control" value="0" onblur="rateTwo(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="j" id="totaltwoo" class="form-control" value="0" onblur="sc(this.value)">
+                </td>
+
+
+
+
+                <td>
+                    <input type="text" name="k" onblur="final2(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="l" id="pre2" class="form-control" value="0" onblur="sc(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="m" id="bal2" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date3" class="form-control">
+                </td>
+                <td>
+                    <textarea name="n" value='null' class="form-control"></textarea>
+                </td>
+                <td>
+                    <input type="text" name="o" id="taf22" class="form-control" value="0" onblur="quanThree(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="p" id="quan33" class="form-control" value="0" onblur="rateThree(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="q" id="total33" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+
+                </td>
+
+
+                <td>
+                    <input type="text" name="r" onblur="final3(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="s" id="pre3" class="form-control" value="0" onblur="s3(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="t" id="bal3" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="date4" class="form-control">
+                </td>
+                <td>
+                    <textarea name="u" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="v" id="taf33" class="form-control" value="0" onblur="quanFour(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="w" id="quan44" class="form-control" value="0" onblur="rateFour(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="x" id="total44" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+
+                <td>
+                    <input type="text" name="z" onblur="final4(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="aa" id="pre4" class="form-control" value="0" onblur="s4(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="bb" id="bal4" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date5" class="form-control">
+                </td>
+                <td>
+                    <textarea name="cc" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="dd" id="taf44" class="form-control" value="0" onblur="quanFive(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="ee" id="quan55" class="form-control" value="0" onblur="rateFive(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="ff" id="total55" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+
+
+
+                <td>
+                    <input type="text" name="gg" onblur="final5(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="hh" id="pre5" class="form-control" value="0" onblur="s5(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="ii" id="bal5" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="text" name="date6" class="form-control">
+                </td>
+                <td>
+                    <textarea name="jj" value='null' class="form-control"></textarea>
+                </td>
+                <td>
+                    <input type="text" name="kk" id="taf55" class="form-control" value="0" onblur="quanSix(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="ll" id="quan66" class="form-control" value="0" onblur="rateSix(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="mm" id="total66" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="nn" onblur="final6(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="oo" id="pre6" class="form-control" value="0" onblur="s6(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="pp" id="bal6" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    <input type="text" name="date7" class="form-control">
+                </td>
+                <td>
+                    <textarea name="qq" value='null' class="form-control"></textarea>
+                </td>
+
+                <td>
+                    <input type="text" name="rr" id="taf66" class="form-control" value="0" onblur="quanSeven(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="ss" id="quan77" class="form-control" value="0" onblur="rateSeven(this.value)">
+                </td>
+                <td>
+                    <input type="text" name="tt" id="total77" class="form-control" value="0" onblur="s(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="uu" onblur="final7(this.value)" class="form-control" value="0">
+                </td>
+
+
+                <td>
+                    <input type="text" name="vv" id="pre7" class="form-control" value="0" onblur="s7(this.value)">
+                </td>
+
+                <td>
+                    <input type="text" name="ww" id="bal7" class="form-control" value="0">
+                </td>
+
+
+
+
+
+
+
+
+
+
+
+                <td>
+                    <button class="btn btn-info">Submit</button>
+                </td>
+
+            </tr>
+        </thead>
+
+
+    </table>
+</form>
+
+<script>
+
+
+    //multiply
+    let quanonee = 0, rateonee = 0, totalone = 0;
+
+    let quanOne = (value1) => {
+        quanonee = value1;
+        const totalone = multiplyone(quanonee, rateonee);
+        TotalOne(totalone);
+    }
+
+    let multiplyone = (quanonee, rateonee) => {
+        return quanonee * rateonee
+    }
+
+    let TotalOne = (totalone) => {
+        document.querySelector("#total11").value = totalone;
+    }
+
+    let rateOne = (value1) => {
+        rateonee = value1;
+        const totalone = multiplyone(quanonee, rateonee);
+        TotalOne(totalone);
+    }
+
+    //second
+
+
+    let quantwoo = 0, ratetwoo = 0, totaltwo = 0;
+
+    let quanTwo = (val) => {
+        quantwoo = val;
+        const totaltwo = multiplyTwo(quantwoo, ratetwoo);
+        TotalTwo(totaltwo);
+    }
+
+    let multiplyTwo = (quantwoo, ratetwoo) => {
+        return quantwoo * ratetwoo
+    }
+
+    let TotalTwo = (totaltwo) => {
+        document.querySelector("#totaltwoo").value = totaltwo;
+    }
+
+    let rateTwo = (val) => {
+        ratetwoo = val;
+        const totaltwo = multiplyTwo(quantwoo, ratetwoo);
+        Totaltwo(totaltwo);
+    }
+
+    // third
+
+
+
+    let quanthree = 0, ratethree = 0, totalthree = 0;
+
+    let quanThree = (valuee3) => {
+        quanthree = valuee3;
+        const totalthree = multiplyThree(quanthree, ratethree);
+        TotalThree(totalthree);
+    }
+
+    let multiplyThree = (quanthree, ratethree) => {
+        return quanthree * ratethree
+    }
+
+    let TotalThree = (totalthree) => {
+        document.querySelector("#total33").value = totalthree;
+    }
+
+    let rateThree = (valuee3) => {
+        ratethree = valuee3;
+        const totalthree = multiplyThree(quanthree, ratethree);
+        Totalthree(totalthree);
+    }
+
+    //fourth
+
+
+
+    let quanfour = 0, ratefour = 0, totalfour = 0;
+
+    let quanFour = (valuee4) => {
+        quanfour = valuee4;
+        const totalfour = multiplyFour(quanfour, ratefour);
+        TotalFour(totalfour);
+    }
+
+    let multiplyFour = (quanfour, ratefour) => {
+        return quanfour * ratefour
+    }
+
+    let TotalFour = (totalfour) => {
+        document.querySelector("#total44").value = totalfour;
+    }
+
+    let rateFour = (valuee4) => {
+        ratefour = valuee4;
+        const totalfour = multiplyFour(quanfour, ratefour);
+        TotalFour(totalfour);
+    }
+
+    //five
+
+    let quanfive = 0, ratefive = 0, totalfive = 0;
+
+    let quanFive = (valuee5) => {
+        quanfive = valuee5;
+        const totalfive = multiplyFive(quanfive, ratefive);
+        TotalFive(totalfive);
+    }
+
+    let multiplyFive = (quanfive, ratefive) => {
+        return quanfive * ratefive
+    }
+
+    let TotalFive = (totalfive) => {
+        document.querySelector("#total55").value = totalfive;
+    }
+
+    let rateFive = (valuee5) => {
+        ratefive = valuee5;
+        const totalfive = multiplyFive(quanfive, ratefive);
+        TotalFive(totalfive);
+    }
+
+
+    // six 
+
+    let quansix = 0, ratesix = 0, totalsix = 0;
+
+    let quanSix = (valuee6) => {
+        quansix = valuee6;
+        const totalsix = multiplySix(quansix, ratesix);
+        TotalSix(totalsix);
+    }
+
+    let multiplySix = (quansix, ratesix) => {
+        return quansix * ratesix
+    }
+
+    let TotalSix = (totalsix) => {
+        document.querySelector("#total66").value = totalsix;
+    }
+
+    let rateSix = (valuee6) => {
+        ratesix = valuee6;
+        const totalsix = multiplySix(quansix, ratesix);
+        TotalSix(totalsix);
+    }
+
+
+    //seven
+
+
+    let quanseven = 0, rateseven = 0, totalseven = 0;
+
+    let quanSeven = (valuee7) => {
+        quanseven = valuee7;
+        const totalseven = multiplySeven(quanseven, rateseven);
+        TotalSeven(totalseven);
+    }
+
+    let multiplySeven = (quanseven, rateseven) => {
+        return quanseven * rateseven
+    }
+
+    let TotalSeven = (totalseven) => {
+        document.querySelector("#total77").value = totalseven;
+    }
+
+    let rateSeven = (valuee7) => {
+        rateseven = valuee7;
+        const totalseven = multiplySeven(quanseven, rateseven);
+        TotalSeven(totalseven);
+    }
+
+    // +
+
+
+    // grand total - previous
+
+    let khar = 0, pre = 0;
+
+    let minusf = (totalsl, khar) => {
+        return totalsl - khar
+    }
+
+    let setPreviousa = (previousz) => {
+        document.querySelector("#pre").value = previousz;
+    }
+
+    let final = (v) => {
+        khar = v;
+        const totalsl =
+            document.querySelector("#total11").value;
+        const previousz = minusf(totalsl, khar);
+        setPreviousa(previousz);
+    }
+
+
+    //second row work
+
+    let khar2 = 0, pre2 = 0;
+
+    let minusf2 = (totalsl2, khar2) => {
+        return totalsl2 - khar2
+    }
+
+    let setPrevious2 = (previousz2) => {
+        document.querySelector("#pre2").value = previousz2;
+    }
+
+    let final2 = (v2) => {
+        khar2 = v2;
+        const totalsl2 =
+            document.querySelector("#pre").value;
+        const previousz2 = minusf2(totalsl2, khar2);
+        setPrevious2(previousz2);
+    }
+
+
+
+
+    let sc = () => {
+        const a = document.querySelector("#totaltwoo").value;
+        const b = document.querySelector("#pre2").value;
+
+        const totals = plusss(a, b);
+        stotal(totals);
+    }
+
+
+    let plusss = (a, b) => {
+        return +a + +b
+    }
+
+    let stotal = (totals) => {
+        document.querySelector("#bal2").value = totals;
+    }
+
+
+
+
+
+
+    // 3rd row work
+
+    let khar3 = 0, pre3 = 0;
+
+    let minusf3 = (totalsl3, khar3) => {
+        return totalsl3 - khar3
+    }
+
+    let setPrevious3 = (previousz3) => {
+        document.querySelector("#pre3").value = previousz3;
+    }
+
+    let final3 = (v3) => {
+        khar3 = v3;
+        const totalsl3 =
+            document.querySelector("#bal2").value;
+        const previousz3 = minusf3(totalsl3, khar3);
+        setPrevious3(previousz3);
+    }
+
+
+
+
+    let s3 = () => {
+        const a3 = document.querySelector("#total33").value;
+        const b3 = document.querySelector("#pre3").value;
+
+        const totals3 = plusss(a3, b3);
+        stotal3(totals3);
+    }
+
+
+    let plusss3 = (a3, b3) => {
+        return +a3 + +b3
+    }
+
+    let stotal3 = (totals3) => {
+        document.querySelector("#bal3").value = totals3;
+    }
+
+
+    //4th row work
+
+
+    let khar4 = 0, pre4 = 0;
+
+    let minusf4 = (totalsl4, khar4) => {
+        return totalsl4 - khar4
+    }
+
+    let setPrevious4 = (previousz4) => {
+        document.querySelector("#pre4").value = previousz4;
+    }
+
+    let final4 = (v4) => {
+        khar4 = v4;
+        const totalsl4 =
+            document.querySelector("#bal3").value;
+        const previousz4 = minusf4(totalsl4, khar4);
+        setPrevious4(previousz4);
+    }
+
+
+
+
+    let s4 = () => {
+        const a4 = document.querySelector("#total44").value;
+        const b4 = document.querySelector("#pre4").value;
+
+        const totals4 = plusss(a4, b4);
+        stotal4(totals4);
+    }
+
+
+    let plusss4 = (a4, b4) => {
+        return +a4 + +b4
+    }
+
+    let stotal4 = (totals4) => {
+        document.querySelector("#bal4").value = totals4;
+    }
+
+
+    //5th row work
+
+
+
+
+
+    let khar5 = 0, pre5 = 0;
+
+    let minusf5 = (totalsl5, khar5) => {
+        return totalsl5 - khar5
+    }
+
+    let setPrevious5 = (previousz5) => {
+        document.querySelector("#pre5").value = previousz5;
+    }
+
+    let final5 = (v5) => {
+        khar5 = v5;
+        const totalsl5 =
+            document.querySelector("#bal4").value;
+        const previousz5 = minusf5(totalsl5, khar5);
+        setPrevious5(previousz5);
+    }
+
+
+
+
+    let s5 = () => {
+        const a5 = document.querySelector("#total55").value;
+        const b5 = document.querySelector("#pre5").value;
+
+        const totals5 = plusss(a5, b5);
+        stotal5(totals5);
+    }
+
+
+    let plusss5 = (a5, b5) => {
+        return +a5 + +b5
+    }
+
+    let stotal5 = (totals5) => {
+        document.querySelector("#bal5").value = totals5;
+    }
+
+
+    // 6th row work
+
+
+    let khar6 = 0, pre6 = 0;
+
+    let minusf6 = (totalsl6, khar6) => {
+        return totalsl6 - khar6
+    }
+
+    let setPrevious6 = (previousz6) => {
+        document.querySelector("#pre6").value = previousz6;
+    }
+
+    let final6 = (v6) => {
+        khar6 = v6;
+        const totalsl6 =
+            document.querySelector("#bal5").value;
+        const previousz6 = minusf6(totalsl6, khar6);
+        setPrevious6(previousz6);
+    }
+
+
+
+
+    let s6 = () => {
+        const a6 = document.querySelector("#total66").value;
+        const b6 = document.querySelector("#pre6").value;
+
+        const totals6 = plusss(a6, b6);
+        stotal6(totals6);
+    }
+
+
+    let plusss6 = (a6, b6) => {
+        return +a6 + +b6
+    }
+
+    let stotal6 = (totals6) => {
+        document.querySelector("#bal6").value = totals6;
+    }
+
+
+
+
+
+    // 7th row work
+
+
+    let khar7 = 0, pre7 = 0;
+
+    let minusf7 = (totalsl7, khar7) => {
+        return totalsl7 - khar7
+    }
+
+    let setPrevious7 = (previousz7) => {
+        document.querySelector("#pre7").value = previousz7;
+    }
+
+    let final7 = (v7) => {
+        khar7 = v7;
+        const totalsl7 =
+            document.querySelector("#bal6").value;
+        const previousz7 = minusf7(totalsl7, khar7);
+        setPrevious7(previousz7);
+    }
+
+
+
+
+    let s7 = () => {
+        const a7 = document.querySelector("#total77").value;
+        const b7 = document.querySelector("#pre7").value;
+
+        const totals7 = plusss(a7, b7);
+        stotal7(totals7);
+    }
+
+
+    let plusss7 = (a7, b7) => {
+        return +a7 + +b7
+    }
+
+    let stotal7 = (totals7) => {
+        document.querySelector("#bal7").value = totals7;
+    }
+
+
+
+
+</script>

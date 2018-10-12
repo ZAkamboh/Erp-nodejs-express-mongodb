@@ -1,0 +1,19 @@
+<form action="/addroom" method="post">
+    <input type="text" name="chc" placeholder="add new showroom">
+    <button type="submit">add</button>
+</form>
+
+<table>
+    {{#each adrom}}
+    <tr>
+        <td>
+            {{chc}}
+        </td>
+        <td>
+            <form action="/deleterom/{{id}}?_method=delete" method="post">
+                <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+        </td>
+    </tr>
+    {{/each}}
+</table>

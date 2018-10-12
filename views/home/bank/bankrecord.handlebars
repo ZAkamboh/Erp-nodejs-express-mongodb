@@ -1,0 +1,265 @@
+<!-- table3 -->
+{{#if delete_messageshafiq}}
+<div class='alert alert-success'> {{delete_messageshafiq}}</div>
+{{/if}} {{#if edit_messageshafiq}}
+<div class='alert alert-success'> {{edit_messageshafiq}}</div>
+{{/if}}
+
+
+
+
+<div class="outer-w3-agile mt-3">
+
+
+    <h4 class="tittle-w3-agileits mb-4 mt-5">Dark Striped Rows</h4>
+    <table class="table table-striped table-dark">
+        <form method="post" action="/bank/search">
+            <select name="name" value="select labour">
+                <option>select any option</option>
+
+                <option value="madina">Al-Madina</option>
+                <option value="personal">Personal</option>
+                <option value="kharcha">Kharcha</option>
+
+
+
+            </select>
+            <button class="btn btn-success">Search</button>
+        </form>
+        <tbody>
+            {{#each ba}}
+
+            <tr>
+                <th style="background-color:white;color:red" scope="row">
+                    <p>NO#</p>
+                </th>
+                <td style="background-color:white;color:red">
+                    <p> DATE</p>
+                </td>
+
+                <td style="background-color:white;color:red">
+                    <p> BODY </p>
+                </td>
+
+                <td style="background-color:white;color:red">
+                    <p>CREDIT </p>
+                </td>
+                <td style="background-color:white;color:red">
+                    <p> DEBIT</p>
+                </td>
+                <td style="background-color:white;color:red">
+                    <p> balance </p>
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <th style="color:white" scope="row">1</th>
+
+
+                <td>
+                    {{date1}}
+                </td>
+                <td>
+                    {{a}}
+                </td>
+
+                <td>
+                    {{b}}
+                </td>
+                <td>
+                    {{c}}
+                </td>
+
+
+
+                <td>
+                    {{d}}
+                </td>
+
+
+
+
+
+            </tr>
+
+
+
+
+
+
+
+            <tr>
+                <th style="color:white" scope="row">2</th>
+                <td>
+                    {{date2}}
+                </td>
+                <td>
+                    {{e}}
+                </td>
+                <td>
+                    {{f}}
+                </td>
+
+                <td>
+                    {{g}}
+                </td>
+
+                <td>
+                    {{h}}
+                </td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+                <th style="color:white" scope="row">3</th>
+                <td>
+                    {{date3}}
+                </td>
+                <td>
+                    {{i}}
+                </td>
+                <td>
+                    {{j}}
+                </td>
+
+                <td>
+                    {{k}}
+                </td>
+                <td>
+                    {{l}}
+                </td>
+
+
+
+
+
+            </tr>
+
+
+
+
+            <tr>
+                <th style="color:white" scope="row">4</th>
+                <td>
+                    {{date4}}
+                </td>
+                <td>
+                    {{m}}
+                </td>
+
+                <td>
+                    {{n}}
+                </td>
+
+                <td>
+                    {{o}}
+                </td>
+                <td>
+                    {{p}}
+                </td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+                <th style="color:white" scope="row">5</th>
+
+
+                <td>
+                    {{date5}}
+                </td>
+                <td>
+                    {{q}}
+                </td>
+
+                <td>
+                    {{r}}
+                </td>
+
+                <td>
+                    {{s}}
+                </td>
+                <td>
+                    {{t}}
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <th style="color:white" scope="row">6</th>
+                <td>
+                    {{date6}}
+                </td>
+                <td>
+                    {{u}}
+                </td>
+                <td>
+                    {{v}}
+                </td>
+
+                <td>
+                    {{w}}
+                </td>
+                <td>
+                    {{x}}
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <th style="color:white" scope="row">7</th>
+                <td>
+                    {{date7}}
+                </td>
+                <td>
+                    {{y}}
+                </td>
+
+                <td>
+                    {{z}}
+                </td>
+
+                <td>
+                    {{aa}}
+                </td>
+                <td>
+                    {{bb}}
+                </td>
+
+
+                <td>
+                    <form action="/bank/delete/{{id}}?_method=delete" method="post">
+                        <button type="submit" class="btn btn-danger">delete</button>
+                    </form>
+
+                </td>
+
+                <td>
+
+                    <a href="/bank/edit/{{id}}" class='btn btn-info'> edit</a>
+                </td>
+                <td>
+
+                    <a href="/bank" class='btn btn-success'>Create record</a>
+                </td>
+            </tr>
+
+
+
+
+        </tbody>
+        {{/each}}
+    </table>
+</div>
+<!--// table3 -->

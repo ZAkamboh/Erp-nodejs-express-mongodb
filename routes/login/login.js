@@ -18,7 +18,7 @@ router.get("/logout", (req, res) => {
   //res.send("working");
 });
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   res.render("login/loginindex.handlebars");
 });
 

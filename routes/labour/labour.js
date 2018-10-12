@@ -70,7 +70,7 @@ router.put("/edit/:id", (req, res) => {
   // res.send("working");
 });
 
-router.get("/", (req, res) => {
+router.get("/home", adminAuthenticated, (req, res) => {
   //res.render("home/index.handlebars", { user: req.user });
   //res.send("working");
 

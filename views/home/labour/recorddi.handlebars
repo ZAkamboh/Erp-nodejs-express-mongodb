@@ -8,19 +8,23 @@
 <hr style="background-color: red">
 <hr style="background-color: red">
 <table class="table table-bordered">
-    <form method="post" action="/sear">
-        <select name="name">
-            <option>select any option</option>
-            {{#each dit }}
+    <Center style="margin:20px">
+        <form method="post" action="/sear">
+            <select name="name" style="color:green">
+                <option>select any option</option>
+                {{#each dit }}
 
-            <option value="{{dihadi}}">{{dihadi}}
+                <option value="{{dihadi}}">{{dihadi}}
 
-            </option>{{/each}}
-        </select>
-        <tbody>
-            <button class="btn btn-success">Search</button>
-    </form>
-
+                </option>{{/each}}
+            </select>
+            <tbody>
+                <center style="margin:10px">
+                    <button class="btn btn-success">Search</button>
+                    <a href="/home" class="btn btn-info">Go To Dashboard</a>
+                </center>
+        </form>
+    </Center>
 
     <thead>
         {{#each rec}}

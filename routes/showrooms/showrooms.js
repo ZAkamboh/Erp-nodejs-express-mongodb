@@ -4,28 +4,8 @@ const showrooms = require("../../models/showrooms");
 const addroom = require("../../models/addroom");
 const { adminAuthenticated } = require("../../helpers/authentication");
 router.all("/*", (req, res, next) => {
-  req.app.locals.layout = "home";
+  req.app.locals.layout = "login";
   next();
-});
-
-router.get("/addroom", adminAuthenticated, (req, res) => {
-  addroom
-    .find({})
-    .then(adrom => {
-      res.render("home/showrooms/addroom.handlebars", { adrom: adrom });
-    })
-    .catch(err => {
-      if (err) return err;
-    });
-});
-
-router.post("/addroom", adminAuthenticated, (req, res) => {
-  const newaddroom = new addroom({
-    chc: req.body.chc
-  });
-  newaddroom.save().then(() => {
-    res.redirect("/rooms");
-  });
 });
 
 router.get("/rooms", adminAuthenticated, (req, res) => {
@@ -216,11 +196,16 @@ router.post("/rooms", adminAuthenticated, (req, res) => {
     });
 });
 
-router.post("/rooms/search", (req, res) => {
+router.post("/rooms/search", adminAuthenticated, (req, res) => {
   showrooms
     .find({ name: req.body.name })
     .then(wood => {
-      res.render("home/showrooms/roomsrecord.handlebars", { wood: wood });
+      addroom.find({}).then(sts => {
+        res.render("home/showrooms/roomsrecord.handlebars", {
+          wood,
+          sts
+        });
+      });
     })
     .catch(error => {
       console.log(error);

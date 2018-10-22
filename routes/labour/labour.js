@@ -8,11 +8,11 @@ const add = require("../../models/add");
 const { adminAuthenticated } = require("../../helpers/authentication");
 
 router.all("/*", (req, res, next) => {
-  req.app.locals.layout = "home";
+  req.app.locals.layout = "login";
   next();
 });
 
-router.get("/edit/:id", (req, res) => {
+router.get("/edit/:id", adminAuthenticated, (req, res) => {
   labour.findOne({ _id: req.params.id }).then(p => {
     //res.send("working");
     res.render("home/labour/edit.handlebars", { p: p });
@@ -21,7 +21,7 @@ router.get("/edit/:id", (req, res) => {
   //
 });
 
-router.put("/edit/:id", (req, res) => {
+router.put("/edit/:id", adminAuthenticated, (req, res) => {
   labour.findOne({ _id: req.params.id }).then(p => {
     p.date1 = req.body.date1;
     p.date2 = req.body.date2;
@@ -70,27 +70,6 @@ router.put("/edit/:id", (req, res) => {
   // res.send("working");
 });
 
-router.get("/home", adminAuthenticated, (req, res) => {
-  //res.render("home/index.handlebars", { user: req.user });
-  //res.send("working");
-
-  const promises = [
-    labour.count().exec(),
-    labourdi.count().exec(),
-    showrooms.count().exec(),
-    bank.count().exec()
-  ];
-  Promise.all(promises).then(([labourr, labourdii, showroomss, bankk]) => {
-    res.render("home/indeX.handlebars", {
-      labourr: labourr,
-      labourdii: labourdii,
-      showroomss: showroomss,
-      bankk: bankk,
-      user: req.user
-    });
-  });
-});
-
 router.delete("/delete/:id", adminAuthenticated, (req, res) => {
   labour.remove({ _id: req.params.id }).then(posttt => {
     req.flash("delete_messageshafiq", "post successfully deleted");
@@ -106,18 +85,6 @@ router.delete("/deletethekedar/:id", adminAuthenticated, (req, res) => {
 });
 
 router.get("/record", adminAuthenticated, (req, res) => {
-  //res.render("home/labour/shafiqrec.handlebars");
-  //res.send("working");
-  //res.render("home/labour/record.handlebars");
-  // labour
-  //   .find({})
-  //   .then(post => {
-  //     res.render("home/labour/record.handlebars", { post: post });
-  //   })
-  //   .catch(err => {
-  //     if (err) return err;
-  //   });
-
   add
     .find({})
     .then(st => {
@@ -137,25 +104,6 @@ router.get("/create", adminAuthenticated, (req, res) => {
     .catch(err => {
       if (err) return err;
     });
-});
-router.get("/add", adminAuthenticated, (req, res) => {
-  add
-    .find({})
-    .then(addlabb => {
-      res.render("home/labour/addlab.handlebars", { addlabb: addlabb });
-    })
-    .catch(err => {
-      if (err) return err;
-    });
-});
-
-router.post("/add", adminAuthenticated, (req, res) => {
-  const newadd = new add({
-    ch: req.body.ch
-  });
-  newadd.save().then(() => {
-    res.redirect("/add");
-  });
 });
 
 router.get("/create", adminAuthenticated, (req, res) => {
@@ -216,11 +164,16 @@ router.post("/create", (req, res) => {
     res.redirect("/record");
   });
 });
-router.post("/search", (req, res) => {
+router.post("/search", adminAuthenticated, (req, res) => {
   labour
     .find({ name: req.body.name })
     .then((response, p) => {
-      res.render("home/labour/record.handlebars", { post: response });
+      add.find({}).then(st => {
+        res.render("home/labour/record.handlebars", {
+          post: response,
+          st: st
+        });
+      });
     })
     .catch(error => {
       console.log(error);

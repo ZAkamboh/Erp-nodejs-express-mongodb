@@ -4,25 +4,9 @@ const bank = require("../../models/bank");
 
 const { adminAuthenticated } = require("../../helpers/authentication");
 router.all("/*", (req, res, next) => {
-  req.app.locals.layout = "home";
+  req.app.locals.layout = "login";
   next();
 });
-
-// router.get("/bank", adminAuthenticated, (req, res) => {
-//   res.render("home/bank/bank.handlebars");
-//   //res.send("working");
-// });
-
-// router.get("/rooms", adminAuthenticated, (req, res) => {
-//     addroom
-//         .find({})
-//         .then(rom => {
-//             res.render("home/showrooms/rooms.handlebars", { rom: rom });
-//         })
-//         .catch(err => {
-//             if (err) return err;
-//         });
-// });
 
 router.get("/bank/edit/:id", adminAuthenticated, (req, res) => {
   bank.findOne({ _id: req.params.id }).then(ba => {
@@ -83,14 +67,6 @@ router.delete("/bank/delete/:id", adminAuthenticated, (req, res) => {
 });
 
 router.get("/bankrec", adminAuthenticated, (req, res) => {
-  //   bank
-  //     .find({})
-  //     .then(ba => {
-  //       res.render("home/bank/bankrecord.handlebars", { ba: ba });
-  //     })
-  //     .catch(err => {
-  //       if (err) return err;
-  //     });
   res.render("home/bank/bankrecord.handlebars");
 });
 
@@ -152,7 +128,7 @@ router.post("/bank", adminAuthenticated, (req, res) => {
     });
 });
 
-router.post("/bank/search", (req, res) => {
+router.post("/bank/search", adminAuthenticated, (req, res) => {
   bank
     .find({ name: req.body.name })
     .then(ba => {

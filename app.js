@@ -9,25 +9,23 @@ const fileupload = require("express-fileupload");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
+const url = require("url");
 
-// mongoose
-//   .connect("mongodb://localhost/postwdata")
-//   .then(() => {
-//     console.log("database successfully connected");
-//   })
-//   .catch(err => {
-//     if (err) return err;
-//     //console.log('database not connected');
-//   });
 if (
   mongoose.connect(
-    "mongodb://interno:meanstackES6@ds151892.mlab.com:51892/interno"
+    "mongodb://erp:FullStackDeveloperes6@ds131753.mlab.com:31753/erp"
   )
 ) {
   mongodb: console.log("connected");
 } else {
   console.log("not connected");
 }
+
+// if (mongoose.connect("mongodb://localhost/postwdata")) {
+//   mongodb: console.log("connected");
+// } else {
+//   console.log("not connected");
+// }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -60,11 +58,13 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({ defaultLayout: "home" }));
 app.set("view engine", "handlebars");
 
+const home = require("./routes/home");
 const labour = require("./routes/labour/labour");
 const labourdi = require("./routes/labour/labourdi");
 const login = require("./routes/login/login");
 const bank = require("./routes/banks/bank");
 const showrooms = require("./routes/showrooms/showrooms");
+app.use("/", home);
 app.use("/", login);
 app.use("/", labour);
 app.use("/", labourdi);

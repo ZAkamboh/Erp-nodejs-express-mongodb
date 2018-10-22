@@ -5,11 +5,12 @@ const dihadi = require("../../models/dihadi");
 //const bcrypt = require("bcrypt");
 const { adminAuthenticated } = require("../../helpers/authentication");
 
-router.get("/dihadi", adminAuthenticated, (req, res) => {
-  // labourdi.find({}).then(rec => {
-  //   res.render("home/labour/recorddi", { rec: rec });
-  // });
+router.all("/*", (req, res, next) => {
+  req.app.locals.layout = "login";
+  next();
+});
 
+router.get("/dihadi", adminAuthenticated, (req, res) => {
   dihadi
     .find({})
     .then(owais => {
@@ -59,7 +60,7 @@ router.get("/editlabourdi/:id", adminAuthenticated, (req, res) => {
   // res.send("working");
 });
 
-router.put("/editlabourdi/:id", (req, res) => {
+router.put("/editlabourdi/:id", adminAuthenticated, (req, res) => {
   labourdi.findOne({ _id: req.params.id }).then(pos => {
     pos.a = req.body.a;
     pos.b = req.body.b;
@@ -172,7 +173,13 @@ router.post("/sear", (req, res) => {
   labourdi
     .find({ name: req.body.name })
     .then(rec => {
-      res.render("home/labour/recorddi.handlebars", { rec: rec });
+      dihadi.find({}).then(dit => {
+        res.render("home/labour/recorddi.handlebars", {
+          rec: rec,
+          dit: dit
+        });
+      });
+      // res.render("home/labour/recorddi.handlebars", { rec: rec });
     })
     .catch(error => {
       console.log(error);

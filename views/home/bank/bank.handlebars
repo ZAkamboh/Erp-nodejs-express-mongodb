@@ -3,19 +3,23 @@
 {{/if}}
 
 <hr style="background-color: red">
-<a href="/bankrec" class="btn btn-info">See Record </a>
+<center>
+    <a href="/bankrec" class="btn btn-info">See Record </a>
+</center>
 <hr style="background-color: red">
+
 <form action="/bank" method="post">
-    <select name="name" value="select labour">
+    <center style="margin:10px">
+        <select name="name" value="select labour">
 
-        <option value="madina">Al-Madina</option>
-        <option value="personal">Personal</option>
-        <option value="kharcha">Kharcha</option>
+            <option value="madina">Al-Madina</option>
+            <option value="personal">Personal</option>
+            <option value="kharcha">Kharcha</option>
 
 
 
-    </select>
-
+        </select>
+    </center>
 
 
     <table class="table table-bordered">
@@ -47,17 +51,17 @@
             <tr>
 
                 <td>
-                    <input type="text" name="date1" class="form-control">
+                    <input type="text" name="date1" class="form-control" disabled>
                 </td>
                 <td>
-                    <textarea name="a" value='null' class="form-control"></textarea>
+                    <textarea name="a" value='null' class="form-control" disabled></textarea>
                 </td>
                 <td style="color:green">
-                    <input type="text" name="b" value="mm" class="form-control" style="color:green">
+                    <input type="text" name="b" class="form-control" style="color:green" disabled>
                 </td>
 
                 <td style="color:red">
-                    <input type="text" name="c" value="mm" class="form-control" onblur="final(this.value)" style="color:red">
+                    <input type="text" name="c" class="form-control" onblur="final(this.value)" style="color:red" disabled>
                 </td>
 
                 <td style="background-color:green;color:white">
@@ -76,17 +80,17 @@
 
 
                 <td>
-                    <input type="text" name="f" onblur="finalpl2(this.value)" class="form-control" value="0">
+                    <input type="text" name="f" onblur="finalpl2(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="g" onblur="final2(this.value)" class="form-control" value="0">
+                    <input type="text" name="g" onblur="final2(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="h" id="pre2" class="form-control" value="0">
+                    <input type="text" name="h" id="pre2" class="form-control">
                 </td>
 
 
@@ -107,17 +111,17 @@
 
 
                 <td>
-                    <input type="text" name="j" onblur="finalpl3(this.value)" class="form-control" value="0">
+                    <input type="text" name="j" onblur="finalpl3(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="k" onblur="final3(this.value)" class="form-control" value="0">
+                    <input type="text" name="k" onblur="final3(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="l" id="pre3" class="form-control" value="0">
+                    <input type="text" name="l" id="pre3" class="form-control">
                 </td>
 
             </tr>
@@ -130,17 +134,17 @@
                 </td>
 
                 <td>
-                    <input type="text" name="n" onblur="finalpl4(this.value)" class="form-control" value="0">
+                    <input type="text" name="n" onblur="finalpl4(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="o" onblur="final4(this.value)" class="form-control" value="0">
+                    <input type="text" name="o" onblur="final4(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="p" id="pre4" class="form-control" value="0">
+                    <input type="text" name="p" id="pre4" class="form-control">
                 </td>
 
 
@@ -160,16 +164,16 @@
 
 
                 <td>
-                    <input type="text" name="r" onblur="finalpl5(this.value)" class="form-control" value="0">
+                    <input type="text" name="r" onblur="finalpl5(this.value)" class="form-control">
                 </td>
 
                 <td>
-                    <input type="text" name="s" onblur="final5(this.value)" class="form-control" value="0">
+                    <input type="text" name="s" onblur="final5(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="t" id="pre5" class="form-control" value="0">
+                    <input type="text" name="t" id="pre5" class="form-control">
                 </td>
 
 
@@ -186,16 +190,16 @@
 
 
                 <td>
-                    <input type="text" name="v" onblur="finalpl6(this.value)" class="form-control" value="0">
+                    <input type="text" name="v" onblur="finalpl6(this.value)" class="form-control">
                 </td>
 
                 <td>
-                    <input type="text" name="w" onblur="final6(this.value)" class="form-control" value="0">
+                    <input type="text" name="w" onblur="final6(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="x" id="pre6" class="form-control" value="0">
+                    <input type="text" name="x" id="pre6" class="form-control">
                 </td>
 
 
@@ -213,16 +217,16 @@
                 </td>
 
                 <td>
-                    <input type="text" name="z" onblur="finalpl7(this.value)" class="form-control" value="0">
+                    <input type="text" name="z" onblur="finalpl7(this.value)" class="form-control">
                 </td>
 
                 <td>
-                    <input type="text" name="aa" onblur="final7(this.value)" class="form-control" value="0">
+                    <input type="text" name="aa" onblur="final7(this.value)" class="form-control">
                 </td>
 
 
                 <td>
-                    <input type="text" name="bb" id="pre7" class="form-control" value="0">
+                    <input type="text" name="bb" id="pre7" class="form-control">
                 </td>
 
 

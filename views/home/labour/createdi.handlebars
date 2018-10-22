@@ -1,12 +1,15 @@
+<center>
+    <a href="/home" class="btn btn-success" style="margin:20px"> GO To Dashboard </a>
+</center>
+
 <form action='/createdi' method='post'>
-    <select name="name" value="select labour">
-        <option>select any option</option>
-        {{#each di}}
-        <option value="{{dihadi}}">{{dihadi}}</option>{{/each}}
-
-
-
-    </select>
+    <center style="margin:10px">
+        <select name="name" value="select labour" style="color:red;width:20%">
+            <option>select any option</option>
+            {{#each di}}
+            <option value="{{dihadi}}">{{dihadi}}</option>{{/each}}
+        </select>
+    </center>
     <table class="table table-bordered">
         <thead>
 
@@ -51,7 +54,7 @@
                 </td>
 
                 <td>
-                    <input type="text" name="f" class="form-control" id="dayTotal" placeholder="yai" onblur="s(this.value)">
+                    <input type="text" name="f" class="form-control" id="dayTotal" onblur="s(this.value)">
                 </td>
 
 
@@ -125,7 +128,7 @@
                     <input type="text" name="h" class="form-control" id="hourRate" onblur="hourRrate(this.value)">
                 </td>
                 <td>
-                    <input type="text" name="i" class="form-control" id="hourRateTotal" placeholder="yai1" onblur="s(this.value)">
+                    <input type="text" name="i" class="form-control" id="hourRateTotal" onblur="s(this.value)">
                 </td>
 
 

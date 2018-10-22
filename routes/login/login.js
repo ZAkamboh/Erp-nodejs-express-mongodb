@@ -55,11 +55,11 @@ router.post(
   })
 );
 
-router.get("/signup", (req, res) => {
+router.get("/signup", adminAuthenticated, (req, res) => {
   res.render("login/signup.handlebars");
 });
 
-router.post("/signup", (req, res) => {
+router.post("/signup", adminAuthenticated, (req, res) => {
   let file = req.files.file;
   let filename = file.name;
 

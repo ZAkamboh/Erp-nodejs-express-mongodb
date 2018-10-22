@@ -15,22 +15,22 @@
 
     <form action="/create" method="post">
 
-
-        <select name="name" value="select labour">
-            <option>select any option</option>
-            {{#each po}}
-            <option value="{{ch}}">{{ch}}</option>{{/each}}
-
-
-
-        </select>
+        <center style="margin:30px">
+            <select name="name" value="select labour">
+                <option>select any option</option>
+                {{#each po}}
+                <option value="{{ch}}">{{ch}}</option>{{/each}}
 
 
 
+            </select>
+
+
+        </center>
 
 
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" style="overflow:auto">
             <thead>
 
                 <tr>
@@ -64,23 +64,23 @@
                         <input type="text" name="date1" class="form-control">
                     </td>
                     <td>
-                        <textarea name="aa" value='null' class="form-control"></textarea>
+                        <textarea name="aa" class="form-control"></textarea>
                     </td>
 
                     <td>
-                        <input type="text" name="taf7" id="taf77" class="form-control" value="0" onblur="quanOne(this.value)">
+                        <input type="text" name="taf7" id="taf77" class="form-control" onblur="quanOne(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="quan1" id="quan11" class="form-control" value="0" onblur="rateOne(this.value)">
+                        <input type="text" name="quan1" id="quan11" class="form-control" onblur="rateOne(this.value)">
                     </td>
 
 
 
                     <td>
-                        <input type="text" name="total1" id="total11" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total1" id="total11" class="form-control" onblur="s(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="GT" id="GTT" class="form-control" value="GT">
+                        <input type="text" name="GT" id="GTT" class="form-control">
                     </td>
 
 
@@ -106,15 +106,15 @@
                         <textarea name="body2" value='null' class="form-control"></textarea>
                     </td>
                     <td>
-                        <input type="text" name="taf1" id="taf11" class="form-control" value="0" onblur="qTwo(this.value)">
+                        <input type="text" name="taf1" id="taf11" class="form-control" onblur="qTwo(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan2" id="quan22" class="form-control" value="0" onblur="rTwo(this.value)">
+                        <input type="text" name="quan2" id="quan22" class="form-control" onblur="rTwo(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="total2" id="totaltwoo" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total2" id="totaltwoo" class="form-control" onblur="s(this.value)">
                     </td>
 
                 </tr>
@@ -129,14 +129,14 @@
                         <textarea name="body3" value='null' class="form-control"></textarea>
                     </td>
                     <td>
-                        <input type="text" name="taf2" id="taf22" class="form-control" value="0" onblur="quanThree(this.value)">
+                        <input type="text" name="taf2" id="taf22" class="form-control" onblur="quanThree(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan3" id="quan33" class="form-control" value="0" onblur="rateThree(this.value)">
+                        <input type="text" name="quan3" id="quan33" class="form-control" onblur="rateThree(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="total3" id="total33" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total3" id="total33" class="form-control" onblur="s(this.value)">
                     </td>
 
 
@@ -154,14 +154,14 @@
                     </td>
 
                     <td>
-                        <input type="text" name="taf3" id="taf33" class="form-control" value="0" onblur="quanFour(this.value)">
+                        <input type="text" name="taf3" id="taf33" class="form-control" onblur="quanFour(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan4" id="quan44" class="form-control" value="0" onblur="rateFour(this.value)">
+                        <input type="text" name="quan4" id="quan44" class="form-control" onblur="rateFour(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="total4" id="total44" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total4" id="total44" class="form-control" onblur="s(this.value)">
                     </td>
                 </tr>
 
@@ -176,14 +176,14 @@
                     </td>
 
                     <td>
-                        <input type="text" name="taf4" id="taf44" class="form-control" value="0" onblur="quanFive(this.value)">
+                        <input type="text" name="taf4" id="taf44" class="form-control" onblur="quanFive(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan5" id="quan55" class="form-control" value="0" onblur="rateFive(this.value)">
+                        <input type="text" name="quan5" id="quan55" class="form-control" onblur="rateFive(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="total5" id="total55" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total5" id="total55" class="form-control" onblur="s(this.value)">
                     </td>
                 </tr>
 
@@ -196,14 +196,14 @@
                         <textarea name="body6" value='null' class="form-control"></textarea>
                     </td>
                     <td>
-                        <input type="text" name="taf5" id="taf55" class="form-control" value="0" onblur="quanSix(this.value)">
+                        <input type="text" name="taf5" id="taf55" class="form-control" onblur="quanSix(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan6" id="quan66" class="form-control" value="0" onblur="rateSix(this.value)">
+                        <input type="text" name="quan6" id="quan66" class="form-control" onblur="rateSix(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="total6" id="total66" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total6" id="total66" class="form-control" onblur="s(this.value)">
                     </td>
                 </tr>
 
@@ -218,14 +218,14 @@
                     </td>
 
                     <td>
-                        <input type="text" name="taf6" id="taf66" class="form-control" value="0" onblur="quanSeven(this.value)">
+                        <input type="text" name="taf6" id="taf66" class="form-control" onblur="quanSeven(this.value)">
                     </td>
 
                     <td>
-                        <input type="text" name="quan7" id="quan77" class="form-control" value="0" onblur="rateSeven(this.value)">
+                        <input type="text" name="quan7" id="quan77" class="form-control" onblur="rateSeven(this.value)">
                     </td>
                     <td>
-                        <input type="text" name="total7" id="total77" class="form-control" value="0" onblur="s(this.value)">
+                        <input type="text" name="total7" id="total77" class="form-control" onblur="s(this.value)">
                     </td>
                     <td>
                         <button class="btn btn-info">Submit</button>
